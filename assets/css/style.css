@@ -1,0 +1,255 @@
+/* google fonts import  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #282436;
+}
+body .card
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: 200px;
+    background: #14121b;
+    border-radius: 5px;
+    transition: .7s all;
+    box-shadow: 0 0 5px #09090a,
+    0 0 20px #0b0a0f,
+    0 0 50px #000;
+}
+body .card:hover
+{
+    height: 350px;
+}
+/* .border-animation animation code  */
+body .card .border-animation
+{
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    border-radius: 4px;
+}
+/* before code  */
+body .card .border-animation::before
+{
+    position: absolute;
+    content: '';
+    width: 200%;
+    height: 80px;
+    top: 50%;
+    left: -50%;
+    background: linear-gradient(transparent, #1ef, transparent);
+    animation: animate-line 4s linear infinite;
+}
+/* animation code  */
+@keyframes animate-line
+{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/* after code  */
+body .card .border-animation::after
+{
+    position: absolute;
+    content: '';
+    background: #1c1925;
+    inset: 2px;
+    border-radius: 4px;
+}
+/* img-box code start  */
+.card .img-box
+{
+    position: absolute;
+    overflow: hidden;
+    top: -15%;
+    width: 150px;
+    height: 150px;
+    background: #141414;
+    transition: .5s all;
+    border-radius: 4px;
+    /* border-radius: 50%; */
+}
+.card:hover .img-box
+{
+    transform: scale(1.2);
+    top: -15%;
+}
+/* img-box before code  */
+.card .img-box::before
+{
+    position: absolute;
+    content: '';
+    top: 35%;
+    left: -50%;
+    width: 200%;
+    height: 60px;
+    background: linear-gradient(transparent, #ff20aa, transparent);
+    animation: animate-img-box 4s linear infinite;
+}
+/* img box animation  */
+@keyframes animate-img-box
+{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+/* img-box after  */
+.card .img-box::after
+{
+    position: absolute;
+    content: '';
+    background: #1c1925;
+    /* border-radius: 50%; */
+    inset: 2px;
+    border-radius: 4px;
+}
+/* profile image ----.img--- code  */
+.card .img-box .img
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .img-box img
+{
+    display: block;
+    object-fit: cover;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    filter: grayscale(1);
+    transition: 1s all;
+    border-radius: 4px;
+}
+.card:hover .img-box img
+{
+    filter: grayscale(0);
+}
+/* profile content code start  */
+.card .profile-content
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+/* title code  */
+.card .profile-content .title
+{
+    margin-top: 8rem;
+    position: relative;
+}
+.card .profile-content .title h3
+{
+    display: flex;
+    flex-direction: column;
+    color: #1ef;
+    font-weight: 400;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: .1em;
+}
+.card .profile-content .title h3 span
+{
+    font-size: 14px;
+    font-weight: 400;
+    color: #ddd;
+    text-transform: capitalize;
+}
+/* content text code  */
+.card .profile-content .text
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3rem;
+    margin-top: 1.8rem;
+    text-align: center;
+    transition: .5s all;
+    transform: translateY(-120px);
+    opacity: 0;
+}
+.card:hover .profile-content .text
+{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.card .profile-content .text p
+{
+    display: flex;
+    flex-direction: column;
+    color: #ddd;
+    letter-spacing: .05em;
+    font-size: 15px;
+}
+.card .profile-content .text p span
+{
+    color: #1ef;
+}
+/* button code start  */
+.card .btn 
+{
+    position: absolute;
+    bottom: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+    transform: translateY(-80%);
+    transition: .5s linear all;
+    opacity: 0;
+}
+.card:hover .btn
+{
+    opacity: 1;
+    transform: translateY(0%);
+}
+.card .btn button
+{
+    background-color: #1ef;
+    color: #14121b;
+    padding: 7px 21px;
+    font-weight: 500;
+    letter-spacing: .07em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .5s all;
+    opacity: .9;
+}
+.card .btn button:last-child
+{
+    background: #ddd;
+}
+.card .btn button:hover
+{
+    opacity: 1;
+}
