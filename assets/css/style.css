@@ -11,11 +11,62 @@ body
 {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: #282436;
 }
+.bird-flying
+{
+    overflow: hidden;
+    position: absolute;
+    z-index: 5;
+    top: -10%;
+    left: 0;
+    transform-origin: top, center;
+    animation: birds 8s linear infinite;
+}
+@keyframes birds
+{
+    0%{
+        transform: translate(200%);
+    }
+    100%{
+        transform: translate(-200%);
+    }
+}
+.bird-flying img
+{
+    width: calc(70% - 30px);
+    height: calc(70% - 30px);
+    filter: saturate(0);
+    filter: brightness(100);
+    animation: rotate 16s linear infinite;
+    transform-origin: bottom center;
+}
+@keyframes rotate 
+{
+    0%{
+        transform: rotate(10deg);
+    }
+    20%{
+        transform: rotate(-10deg);
+    }
+    40%{
+        transform: rotate(10deg);
+    }
+    60%{
+        transform: rotate(-10deg);
+    }
+    80%{
+        transform: rotate(10deg);
+    }
+    100%{
+        transform: rotate(-10deg);
+    }
+}
+
 body .card
 {
     position: relative;
